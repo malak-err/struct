@@ -62,3 +62,16 @@ int main (){
     } while (choix != 3);
     return 0;
 }
+void supprimerpersonne(){ char nom[50];
+printf("Entrer le nom de la personne à supprimer : "); 
+scanf("%s", nom);
+int found = 0;
+for (int i = 0; i < nombrePersonnes; i++) { 
+if (strcmp(personnes[i].nom, nom) == 0) { found = 1; for (int j = i; j < nombrePersonnes - 1; j++) 
+{ personnes[j] = personnes[j + 1]; } nombrePersonnes--;
+printf("Personne supprimée avec succès.\n");
+break; 
+}
+}
+if (!found) { printf("Personne non trouvée.\n"); 
+}
